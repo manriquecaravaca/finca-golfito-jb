@@ -5,236 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Proyecto: Finca Ecológica en Golfito</title>
     <style>
-        /* Estilos CSS Generales */
         :root {
-            --primary-green: #2e7d32; /* Verde del logo JB */
+            --primary-green: #2e7d32;
             --dark-green: #1b5e20;
             --light-bg: #f9fcf9;
             --text-color: #333;
-            --accent-blue: #0277bd; /* Azul de la mariposa */
-            --accent-brown: #8d6e63; /* Marrón del logo */
+            --accent-blue: #0277bd;
+            --accent-brown: #8d6e63;
         }
-
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.8;
-        }
-
-        /* Cabecera Fija con Logo */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header img {
-            height: 60px; /* Ajustar según tamaño del logo JB */
-            width: auto;
-        }
-
-        /* Secciones Principales */
-        section {
-            padding: 100px 20px 60px 20px; /* Padding superior para la cabecera fija */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h1, h2, h3 {
-            color: var(--dark-green);
-            font-weight: 700;
-        }
-
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: var(--text-color); line-height: 1.8; }
+        header { background-color: rgba(255, 255, 255, 0.95); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; }
+        header img { height: 80px; width: auto; }
+        section { padding: 100px 20px 60px 20px; max-width: 1200px; margin: 0 auto; }
+        h1, h2, h3 { color: var(--dark-green); font-weight: 700; }
         h1 { font-size: 2.5em; text-align: center; margin-bottom: 0.5em; }
         h2 { font-size: 2em; border-bottom: 3px solid var(--accent-brown); padding-bottom: 10px; margin-bottom: 30px; }
-        h3 { font-size: 1.5em; margin-top: 1.5em; }
-
-        p { margin-bottom: 1.5em; font-size: 1.1em; text-align: justify; }
-
-        /* Sección Héroe (Portada) */
-        #hero {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/image_4.png'); /* IMAGEN 4: Vista panorámica */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
+        #hero { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg'); background-size: cover; background-position: center; color: white; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
         #hero h1 { color: white; font-size: 3.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        #hero p { color: white; font-size: 1.3em; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); max-width: 800px; text-align: center; }
-
-        /* Cuadrículas de Imágenes */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .image-item {
-            background-color: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-style: italic;
-            margin-top: 10px;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        /* Sección de Aventura (Diseño a dos columnas) */
-        .adventure-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .adventure-image {
-            flex: 1;
-        }
-
-        .adventure-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .adventure-text {
-            flex: 1.5;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: var(--dark-green);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        /* Adaptabilidad para móviles */
-        @media (max-width: 768px) {
-            #hero h1 { font-size: 2.5em; }
-            .adventure-content { flex-direction: column; }
-            .adventure-image, .adventure-text { flex: none; width: 100%; }
-        }
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+        .image-item { background-color: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .image-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
+        .adventure-content { display: flex; align-items: center; gap: 40px; }
+        .adventure-image { flex: 1; }
+        .adventure-image img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .adventure-text { flex: 1.5; }
+        footer { background-color: var(--dark-green); color: white; padding: 40px 20px; text-align: center; }
+        @media (max-width: 768px) { .adventure-content { flex-direction: column; } }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="images/image_7.png" alt="Logo JB Proyecto Ecológico"> </header>
+        <img src="images/JB.jpg" alt="Logo JB">
+    </header>
 
     <section id="hero">
-        <h1>Oportunidad Única de Inversión en Golfito</h1>
-        <p>Una joya ecológica de 80 hectáreas con vistas inigualables al Océano Pacífico y la Marina de Golfito.</p>
+        <h1>Oportunidad de Inversión en Golfito</h1>
+        <p>80 hectáreas con vistas a la Marina Golfito y biodiversidad inestimable.</p>
     </section>
 
-    <section id="introduccion">
-        <h2>Un Paraíso Estratégicamente Ubicado</h2>
-        <p>Presentamos una propiedad excepcional de aproximadamente <strong>80 hectáreas</strong> situada en el corazón de Golfito, provincia de Puntarenas. Esta finca representa una de las últimas y más valiosas oportunidades de desarrollo turístico sostenible en la zona. Su posición privilegiada ofrece <strong>vistas panorámicas espectaculares del Océano Pacífico</strong>, divisándose claramente la prestigiosa <strong>Marina de Golfito</strong> y el majestuoso Golfo Dulce.</p>
-        
+    <section>
+        <h2>Vistas y Ubicación</h2>
         <div class="image-grid">
             <div class="image-item">
-                <img src="images/image_6.png" alt="Vista de la Marina de Golfito desde la propiedad"> <p class="image-caption">Vistas directas a la Marina de Golfito y el Golfo Dulce.</p>
+                <img src="images/823F077E-985E-428B-BE50-00DE7784637F.jpg" alt="Marina">
+                <p style="text-align:center italic">Vista a la Marina de Golfito.</p>
             </div>
             <div class="image-item">
-                <img src="images/image_4.png" alt="Panorámica del Golfo Dulce"> <p class="image-caption">El imponente escenario natural que rodea la finca.</p>
-            </div>
-        </div>
-
-        <h3>Conectividad y Acceso</h3>
-        <p>La finca combina la privacidad de la selva con una excelente conectividad. Cuenta con dos puntos de acceso principales: uno a través de la exclusiva calle La Torre y el otro por el distrito de Guaycará, específicamente por la entrada de las Viquillas, situándose a tan solo 8 km de la vital carretera Interamericana.</p>
-    </section>
-
-    <section id="naturaleza">
-        <h2>Riquezas Inestimables: Flora y Fauna</h2>
-        <p>La propiedad es un santuario de biodiversidad, albergando ecosistemas maduros y especies de incalculable valor. Sus tierras están colmadas de <strong>maderas preciosas centenarias</strong> que constituyen un patrimonio forestal único, incluyendo especies como el Nazareno, Guapinol, Chiricano y Manu negro.</p>
-        
-        <p>En cuanto a la fauna, la finca es un corredor biológico activo. Es el hábitat de imponentes felinos como <strong>manigordos, tolomucos y ocelotes</strong>. Los visitantes pueden maravillarse con el avistamiento constante de mamíferos como tepezcuintles, cherengas, saínos, y tropas de monos congo y monos ardilla.</p>
-        
-        <p>Para los amantes de la ornitología, el cielo y las copas de los árboles están llenos de vida con loras, lapas rojas, trogones, toledos y el icónico yigüirro.</p>
-
-        <h3>Un Mundo Micro-Ecológico y Herpetológico</h3>
-        <p>El suelo del bosque y los arroyos albergan un tesoro para científicos y fotógrafos de naturaleza. Puede apreciarse una gran cantidad de <strong>ranas miniatura y anfibios exóticos</strong>, junto con una vibrante población de insectos, incluyendo las espectaculares mariposas Morpho y Heráclides. Los reptiles también tienen su lugar, con la presencia de boas, iguanas y otras especies fascinantes.</p>
-
-        <div class="image-grid">
-            <div class="image-item">
-                <img src="images/image_0.png" alt="Rana de cristal miniatura"> <p class="image-caption">Descubra la increíble variedad de ranas miniatura.</p>
-            </div>
-            <div class="image-item">
-                <img src="images/image_1.png" alt="Pequeña rana arbórea"> <p class="image-caption">Un ecosistema vibrante y lleno de vida macro.</p>
-            </div>
-            <div class="image-item">
-                <img src="images/image_3.png" alt="Rana dardo venenosa"> <p class="image-caption">Hogar de especies emblemáticas del trópico húmedo.</p>
-            </div>
-            <div class="image-item">
-                <img src="images/image_2.png" alt="Sapo de bosque"> <p class="image-caption">Biodiversidad en cada rincón de la propiedad.</p>
+                <img src="images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg" alt="Vistas">
+                <p style="text-align:center italic">Potencial de desarrollo inigualable.</p>
             </div>
         </div>
     </section>
 
-    <section id="aventura">
-        <h2>Aventura y Pureza Cristalina</h2>
+    <section>
+        <h2>Biodiversidad</h2>
+        <div class="image-grid">
+            <div class="image-item"><img src="images/D55F4434-7FF5-428C-AB98-DE01300CE82C.jpg"></div>
+            <div class="image-item"><img src="images/9978F1D7-D23D-401F-8678-4E49D640B1E1.jpg"></div>
+            <div class="image-item"><img src="images/916D7F53-18D6-4152-87CA-1F5E076DBE22.jpg"></div>
+            <div class="image-item"><img src="images/866B46B7-0F7D-4F7E-BCF2-8EC1F1076A7D.jpg"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Aventura y Cascadas</h2>
         <div class="adventure-content">
             <div class="adventure-image">
-                <img src="images/image_5.png" alt="Aventura en la cascada de la finca"> </div>
+                <img src="images/C39876B7-3FC3-4024-BF16-B6750CBDEF5E.jpeg" alt="Cascada">
+            </div>
             <div class="adventure-text">
-                <p>Uno de los atractivos más poderosos de la finca es su red hídrica. La propiedad cuenta con impresionantes <strong>cascadas de más de 20 metros de altura</strong>, alimentadas por agua pura y cristalina. Estos saltos de agua no son solo un espectáculo visual, sino el escenario perfecto para actividades de **turismo de aventura como el rapel**.</p>
-                <p>En la base de las cascadas y a lo largo de los arroyos, se forman pozas naturales de agua cristalina, ideales para nadar y relajarse. Estas pozas son tan puras que albergan peces y camarones de agua dulce, lo que subraya la salud ecológica intocada de la propiedad.</p>
+                <p>Cascadas de más de 20 metros de altura para rapel y pozas de agua cristalina para nadar.</p>
             </div>
         </div>
-    </section>
-
-    <section id="potencial">
-        <h2>Un Gran Potencial de Desarrollo Turístico</h2>
-        <p>Esta finca no es solo tierra; es un lienzo en blanco para un proyecto ecoturístico de clase mundial. Ofrece una amplia gama de opciones que pueden ser desarrolladas de manera armónica con el entorno:</p>
-        <ul>
-            <li><strong>Turismo de Aventura:</strong> Creación de una red de senderos interpretativos, avistamiento guiado de aves, mamíferos, reptiles y anfibios.</li>
-            <li><strong>Turismo Investigativo:</strong> Establecimiento de estaciones de investigación biológica y forestal debido a la madurez de sus bosques.</li>
-            <li><strong>Actividades de Adrenalina:</strong> Desarrollo de rapel en las cascadas y *canopy* entre las copas de los árboles centenarios.</li>
-            <li><strong>Wellness y Relajación:</strong> Retiros de yoga y meditación junto a las pozas de agua pura, aprovechando la paz y la energía del lugar.</li>
-        </ul>
-        <p>El potencial turístico es inmenso, impulsado primero por las características intrínsecas de la propiedad y segundo por su cercanía estratégica a puntos de alto perfil como la <strong>Marina de Golfito</strong>.</p>
-        <p>La inversión en esta finca garantizará el posicionamiento en la zona como un centro de turismo de referencia, tanto a nivel nacional como internacional. Se requiere coordinar y cumplir con toda la normativa vigente para ofrecer un atractivo seguro, sostenible y exclusivo.</p>
     </section>
 
     <footer>
-        <h2>¿Interesado en este Proyecto Único?</h2>
-        <p>Para más información detallada, mapas, estudios preliminares y coordinar una visita a la propiedad, por favor contáctenos.</p>
-        <p><strong>[Aquí puede ir un correo electrónico de contacto o un número de teléfono]</strong></p>
-        <p>&copy; 2023 Proyecto Ecológico Golfito. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Venta de Finca en Golfito - Contacto: [Tu información]</p>
     </footer>
 
 </body>
