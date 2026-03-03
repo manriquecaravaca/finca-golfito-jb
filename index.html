@@ -3,136 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inversión Exclusiva: Finca Ecológica Golfito</title>
+    <title>Inversión Estratégica: Santuario Ecológico Golfito</title>
     <style>
         :root {
-            --forest-green: #1b5e20;
-            --earth-tan: #f4f1ea;
-            --gold: #c5a059;
-            --deep-blue: #01579b;
+            --forest: #0a3d1d;
+            --clay: #a67c52;
+            --water: #0077be;
+            --cream: #fdfaf5;
+            --text: #2c3e50;
         }
 
-        body { 
-            font-family: 'Georgia', serif; 
-            margin: 0; padding: 0; 
-            background-color: var(--earth-tan); 
-            color: #333; 
-            line-height: 1.8;
-        }
-
+        body { font-family: 'Garamond', serif; background-color: var(--cream); color: var(--text); margin: 0; line-height: 1.8; }
+        
+        /* Cabecera con Logos */
         header { 
-            background: white; padding: 10px 0; position: fixed; 
-            width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); 
-            display: flex; justify-content: center;
+            background: white; padding: 15px 40px; position: fixed; width: 100%; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
         }
+        .logo-main { height: 60px; }
+        .logo-esencial { height: 45px; opacity: 0.8; }
 
-        header img { height: 75px; }
-
+        .container { max-width: 1100px; margin: 120px auto 60px; padding: 0 20px; }
+        
         .hero { 
-            height: 80vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg') center/cover no-repeat;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: white; text-align: center; margin-top: 80px; padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg') center/cover;
+            height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; border-radius: 20px; margin-bottom: 60px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.5rem; max-width: 800px; font-style: italic; }
+        h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+        h2 { color: var(--forest); font-size: 2.2rem; border-bottom: 2px solid var(--clay); display: inline-block; margin-bottom: 25px; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 80px; align-items: center; }
+        .image-card { background: white; padding: 10px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .image-card img { width: 100%; border-radius: 8px; }
 
-        .section-title { 
-            text-align: center; color: var(--forest-green); font-size: 2.5rem; 
-            margin-bottom: 40px; border-bottom: 2px solid var(--gold); display: inline-block;
-            left: 50%; position: relative; transform: translateX(-50%);
+        /* Sección Esencial Costa Rica */
+        .esencial-section { 
+            background: var(--forest); color: white; padding: 60px; border-radius: 20px; margin: 80px 0;
+            display: flex; align-items: center; gap: 40px;
         }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 80px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 40px 0; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
+        .gallery img:hover { transform: scale(1.03); }
 
-        .card { background: white; padding: 15px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 3px; }
+        .badge { background: var(--clay); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; }
 
-        .highlight-box { 
-            background: var(--forest-green); color: white; padding: 50px; 
-            border-radius: 20px; margin: 60px 0;
-        }
+        footer { background: #1a1a1a; color: white; padding: 80px 20px; text-align: center; }
+        .contact-btn { background: #fff; color: var(--forest); padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; display: inline-block; margin-top: 25px; }
+        .contact-btn:hover { background: var(--clay); color: white; }
 
-        .footer { background: #111; color: white; padding: 80px 20px; text-align: center; }
-        .btn { 
-            background: var(--gold); color: white; padding: 15px 40px; 
-            text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem;
-            display: inline-block; margin-top: 20px; transition: 0.3s;
-        }
-        .btn:hover { background: #b08e48; transform: scale(1.05); }
-
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
-        }
+        @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="images/JB.jpg" alt="Logo JB">
+        <img src="images/JB.jpg" class="logo-main" alt="JB Logo">
+        <img src="images/costa-rica-logo-esencial.jpg" class="logo-esencial" alt="Esencial Costa Rica">
     </header>
-
-    <div class="hero">
-        <h1>El Santuario de Golfito</h1>
-        <p>Donde la selva primaria se encuentra con el Océano Pacífico</p>
-    </div>
 
     <div class="container">
         
-        <div class="grid-2">
+        <div class="hero">
+            <span class="badge">Oportunidad Inmobiliaria Única</span>
+            <h1>Santuario Natural Golfito</h1>
+            <p>Donde la Inversión encuentra el Corazón de la Biodiversidad</p>
+        </div>
+
+        <section class="feature-grid">
             <div>
-                <h2 class="section-title">Ubicación Estratégica</h2>
-                <p>Ubicada en la joya del sur, Golfito, esta finca de <strong>80 hectáreas</strong> goza de una conectividad privilegiada. Con accesos por Calle La Torre y el distrito de Guaycará (entrada de las Viquillas a solo 8km de la Interamericana), ofrece el equilibrio perfecto entre aislamiento natural y accesibilidad logística.</p>
-                <p>Desde sus puntos más altos, se domina visualmente la <strong>Marina de Golfito</strong>, proyectando un valor inmobiliario incalculable por su cercanía a centros de yates de lujo y servicios turísticos de alto nivel.</p>
+                <h2>Ubicación de Valor Estratégico</h2>
+                <p>Ubicada en la prestigiosa zona de Golfito, esta finca de <strong>80 hectáreas</strong> ofrece una topografía privilegiada que regala vistas cinematográficas hacia la <strong>Marina de Golfito</strong> y el Golfo Dulce. El acceso está garantizado por dos vías estratégicas: Calle La Torre y el distrito de Guaycará, conectando la paz absoluta con la infraestructura vial de la Carretera Interamericana.</p>
             </div>
-            <div class="card">
-                <img src="images/823F077E-985E-428B-BE50-00DE7784637F.jpg" alt="Vista Marina">
+            <div class="image-card">
+                <img src="images/823F077E-985E-428B-BE50-00DE7784637F.jpg" alt="Vistas a la Marina">
             </div>
-        </div>
+        </section>
 
-        <h2 class="section-title">Tesoro Forestal y Fauna</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Un pulmón de vida primaria con maderas preciosas centenarias como Nazareno, Guapinol, Chiricano y Manu Negro, protegiendo un ecosistema de valor inestimable.</p>
-        
-        <div class="grid-3">
-            <div class="card"><img src="images/D55F4434-7FF5-428C-AB98-DE01300CE82C.jpg"><p style="text-align:center">Ranas miniatura exóticas</p></div>
-            <div class="card"><img src="images/9978F1D7-D23D-401F-8678-4E49D640B1E1.jpg"><p style="text-align:center">Especies protegidas</p></div>
-            <div class="card"><img src="images/916D7F53-18D6-4152-87CA-1F5E076DBE22.jpg"><p style="text-align:center">Biodiversidad única</p></div>
-        </div>
+        <section>
+            <h2>El Corazón de la Selva: Bosque Tropical Muy Húmedo</h2>
+            <p>Golfito pertenece a una de las regiones biológicamente más intensas del planeta. Esta propiedad protege un ecosistema de <strong>Bosque Tropical Muy Húmedo</strong>, caracterizado por una pluviosidad que mantiene la tierra siempre joven y fértil. Es el hogar de gigantes milenarios: maderas preciosas como el <strong>Nazareno, Guapinol, Chiricano y Manu Negro</strong>, cuya densidad forestal garantiza una huella de carbono negativa y un valor incalculable para el turismo investigativo.</p>
+            
+            <div class="gallery">
+                <img src="images/D55F4434-7FF5-428C-AB98-DE01300CE82C.jpg">
+                <img src="images/9978F1D7-D23D-401F-8678-4E49D640B1E1.jpg">
+                <img src="images/916D7F53-18D6-4152-87CA-1F5E076DBE22.jpg">
+                <img src="images/866B46B7-0F7D-4F7E-BCF2-8EC1F1076A7D.jpg">
+            </div>
+        </section>
 
-        <div class="highlight-box">
-            <h2>Hogar de lo Indómito</h2>
-            <p>Sus tierras son recorridas por manigordos, ocelotes, tolomucos y mamíferos emblemáticos como el mono ardilla y el mono congo. El cielo es propiedad de lapas, trogones y yigüirros, creando un escenario perfecto para el <strong>turismo de avistamiento</strong> y la fotografía de naturaleza de clase mundial.</p>
-        </div>
+        <section class="esencial-section">
+            <div style="flex: 1;">
+                <h2 style="color: white; border-bottom-color: white;">Bajo el Estandarte Esencial Costa Rica</h2>
+                <p>Costa Rica es referente mundial en sostenibilidad. Esta propiedad encarna los 5 valores de la marca país: **Excelencia, Sostenibilidad, Innovación, Progreso Social y Origen Costarricense**. Invertir aquí no es solo adquirir tierra, es integrarse a un modelo de negocio que respeta la normativa ambiental y eleva el prestigio del inversionista ante el mundo.</p>
+            </div>
+            <div style="flex: 0.5; text-align: center;">
+                <img src="images/costa-rica-logo-esencial.png" style="width: 150px; filter: brightness(0) invert(1);">
+            </div>
+        </section>
 
-        <div class="grid-2">
-            <div class="card">
-                <img src="images/C39876B7-3FC3-4024-BF16-B6750CBDEF5E.jpeg" style="height: 500px;">
+        <section class="feature-grid">
+            <div class="image-card">
+                <img src="images/C39876B7-3FC3-4024-BF16-B6750CBDEF5E.jpeg" alt="Cascadas Golfito">
             </div>
             <div>
-                <h2 class="section-title">Agua Pura y Aventura</h2>
-                <p>El recurso hídrico es el protagonista: <strong>Cascadas de más de 20 metros de altura</strong> que caen sobre pozas cristalinas de agua pura. Un santuario donde el rapel, el senderismo de aventura y la natación en pozas con peces y camarones de agua dulce ofrecen una experiencia mística y refrescante.</p>
-                <p>Este activo permite desarrollar proyectos de turismo investigativo o wellness de lujo, aprovechando el sonido y la pureza del entorno.</p>
+                <h2>Agua Pura: Ríos y Cascadas de Ensueño</h2>
+                <p>La orografía de Golfito genera una red hídrica única. Dentro de la propiedad, imponentes <strong>cascadas de más de 20 metros</strong> crean un microclima de frescura y paz. Los ríos de agua cristalina albergan vida silvestre como camarones y peces de agua dulce, ofreciendo el escenario perfecto para el rapel de alto nivel o pozas de nado natural. Este recurso garantiza la viabilidad de cualquier proyecto ecoturístico o residencial de lujo.</p>
             </div>
-        </div>
-
-        <div style="text-align: center; background: white; padding: 50px; border-radius: 10px;">
-            <h2 class="section-title">Visión de Inversión</h2>
-            <p>Esta propiedad no es solo tierra; es un <strong>HUB Turístico Internacional</strong> en potencia. Su cercanía a la Marina Golfito y su riqueza natural permiten un desarrollo bajo normativas de sostenibilidad que atraerá al mercado europeo y norteamericano interesado en el ecoturismo de lujo y la investigación biológica.</p>
-        </div>
+        </section>
 
     </div>
 
-    <div class="footer">
-        <h2>Inicie su próximo gran proyecto</h2>
-        <p>Haga clic abajo para contactar directamente por correo:</p>
-        <a href="mailto:yeisonbaltodano1977@gmail.com" class="btn">yeisonbaltodano1977@gmail.com</a>
-        <p style="margin-top: 50px; opacity: 0.6;">© 2024 Proyecto Finca Golfito JB. Golfito, Puntarenas, Costa Rica.</p>
-    </div>
+    <footer>
+        <h2>¿Listo para dejar su huella en Costa Rica?</h2>
+        <p>Inversión inmobiliaria con visión de futuro y respeto ambiental.</p>
+        <a href="mailto:yeisonbaltodano1977@gmail.com" class="contact-btn">Yeison Baltodano - Consultar Información</a>
+        <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.6;">Golfito, Puntarenas. Proyecto Alineado con la Sostenibilidad Costarricense.</p>
+    </footer>
 
 </body>
 </html>
