@@ -3,105 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Proyecto: Finca Golfito</title>
+    <title>Inversión Exclusiva: Finca Ecológica Golfito</title>
     <style>
         :root {
-            --primary-green: #2e7d32;
-            --dark-green: #1b5e20;
-            --soft-bg: #f4f1ea; /* Color crema suave para el fondo */
-            --text-color: #2c3e50;
-            --accent-brown: #8d6e63;
+            --forest-green: #1b5e20;
+            --earth-tan: #f4f1ea;
+            --gold: #c5a059;
+            --deep-blue: #01579b;
         }
 
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: var(--soft-bg); 
-            color: var(--text-color); 
-            line-height: 1.6; 
+            font-family: 'Georgia', serif; 
+            margin: 0; padding: 0; 
+            background-color: var(--earth-tan); 
+            color: #333; 
+            line-height: 1.8;
         }
 
         header { 
-            background-color: white; 
-            padding: 15px 0; 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            text-align: center;
+            background: white; padding: 10px 0; position: fixed; 
+            width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); 
+            display: flex; justify-content: center;
         }
 
-        header img { height: 70px; width: auto; }
+        header img { height: 75px; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        #hero { 
-            margin-top: 100px;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            height: 60vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: white; 
-            text-align: center;
-            border-radius: 15px;
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center; margin-top: 80px; padding: 0 20px;
         }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        h2 { color: var(--dark-green); border-left: 5px solid var(--primary-green); padding-left: 15px; margin-top: 50px; }
+        .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.5rem; max-width: 800px; font-style: italic; }
 
-        .image-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-            margin: 30px 0; 
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+
+        .section-title { 
+            text-align: center; color: var(--forest-green); font-size: 2.5rem; 
+            margin-bottom: 40px; border-bottom: 2px solid var(--gold); display: inline-block;
+            left: 50%; position: relative; transform: translateX(-50%);
         }
 
-        .image-card { 
-            background: white; 
-            padding: 10px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 80px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
-        .image-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
+        .card { background: white; padding: 15px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 3px; }
 
         .highlight-box { 
-            background-color: #e8f5e9; 
-            padding: 30px; 
-            border-radius: 15px; 
-            border-right: 8px solid var(--primary-green);
-            margin: 40px 0;
+            background: var(--forest-green); color: white; padding: 50px; 
+            border-radius: 20px; margin: 60px 0;
         }
 
-        footer { 
-            background-color: var(--dark-green); 
-            color: white; 
-            padding: 60px 20px; 
-            text-align: center; 
-            margin-top: 80px;
+        .footer { background: #111; color: white; padding: 80px 20px; text-align: center; }
+        .btn { 
+            background: var(--gold); color: white; padding: 15px 40px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem;
+            display: inline-block; margin-top: 20px; transition: 0.3s;
         }
+        .btn:hover { background: #b08e48; transform: scale(1.05); }
 
-        .btn-contacto {
-            display: inline-block;
-            background-color: white;
-            color: var(--dark-green);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
         }
-
-        .btn-contacto:hover { background-color: var(--soft-bg); }
-
-        @media (max-width: 600px) { h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
@@ -110,61 +77,62 @@
         <img src="images/JB.jpg" alt="Logo JB">
     </header>
 
-    <div class="container">
-        <section id="hero">
-            <h1>Paraíso en Golfito</h1>
-            <p style="font-size: 1.2rem;">80 Hectáreas de Biodiversidad y Vistas Exclusivas</p>
-        </section>
-
-        <section id="ubicacion">
-            <h2>Ubicación Privilegiada</h2>
-            <p>Ubicada en la provincia de Puntarenas, con acceso doble por Calle La Torre y Guaycará. Esta finca ofrece vistas inigualables a la <strong>Marina de Golfito</strong> y al Océano Pacífico.</p>
-            
-            <div class="image-grid">
-                <div class="image-card">
-                    <img src="images/823F077E-985E-428B-BE50-00DE7784637F.jpg" alt="Marina de Golfito">
-                    <p style="text-align:center; font-size: 0.9rem;">Vista a la Marina desde la propiedad.</p>
-                </div>
-                <div class="image-card">
-                    <img src="images/F0A0AE7F-571F-40BB-BCAF-50B8FC2469AB.jpg" alt="Océano Pacífico">
-                    <p style="text-align:center; font-size: 0.9rem;">Horizonte del Pacífico.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="naturaleza">
-            <h2>Riqueza Natural y Biodiversidad</h2>
-            <p>Hogar de maderas preciosas como el <strong>Nazareno, Guapinol y Manu Negro</strong>. Sus tierras albergan una fauna vibrante: manigordos, ocelotes, monos congo y aves exóticas como lapas y trogones.</p>
-            
-            <div class="image-grid">
-                <div class="image-card"><img src="images/D55F4434-7FF5-428C-AB98-DE01300CE82C.jpg" alt="Rana"></div>
-                <div class="image-card"><img src="images/9978F1D7-D23D-401F-8678-4E49D640B1E1.jpg" alt="Rana"></div>
-                <div class="image-card"><img src="images/916D7F53-18D6-4152-87CA-1F5E076DBE22.jpg" alt="Rana"></div>
-                <div class="image-card"><img src="images/866B46B7-0F7D-4F7E-BCF2-8EC1F1076A7D.jpg" alt="Sapo"></div>
-            </div>
-        </section>
-
-        <section class="highlight-box">
-            <h2>Aventura y Agua Pura</h2>
-            <p>La finca cuenta con imponentes <strong>cascadas de más de 20 metros</strong>. Sus pozas cristalinas son ideales para nadar y practicar rapel, rodeados de peces y camarones de agua dulce.</p>
-            <div style="text-align: center; margin-top: 20px;">
-                <img src="images/C39876B7-3FC3-4024-BF16-B6750CBDEF5E.jpeg" style="max-width: 100%; border-radius: 10px; height: 400px; object-fit: cover;">
-            </div>
-        </section>
-
-        <section>
-            <h2>Potencial de Inversión</h2>
-            <p>Ideal para turismo de aventura, investigación biológica o un centro de retiro internacional. Una inversión estratégica en una de las zonas con mayor crecimiento ecoturístico de Costa Rica.</p>
-        </section>
+    <div class="hero">
+        <h1>El Santuario de Golfito</h1>
+        <p>Donde la selva primaria se encuentra con el Océano Pacífico</p>
     </div>
 
-    <footer>
-        <h3>¿Desea más información?</h3>
-        <p>Contáctenos para conocer detalles técnicos y coordinar una visita.</p>
-        <p><strong>Correo electrónico:</strong></p>
-        <a href="mailto:yeisonbaltodano1977@gmail.com" class="btn-contacto">yeisonbaltodano1977@gmail.com</a>
-        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.7;">&copy; 2024 Proyecto Finca Golfito JB. Todos los derechos reservados.</p>
-    </footer>
+    <div class="container">
+        
+        <div class="grid-2">
+            <div>
+                <h2 class="section-title">Ubicación Estratégica</h2>
+                <p>Ubicada en la joya del sur, Golfito, esta finca de <strong>80 hectáreas</strong> goza de una conectividad privilegiada. Con accesos por Calle La Torre y el distrito de Guaycará (entrada de las Viquillas a solo 8km de la Interamericana), ofrece el equilibrio perfecto entre aislamiento natural y accesibilidad logística.</p>
+                <p>Desde sus puntos más altos, se domina visualmente la <strong>Marina de Golfito</strong>, proyectando un valor inmobiliario incalculable por su cercanía a centros de yates de lujo y servicios turísticos de alto nivel.</p>
+            </div>
+            <div class="card">
+                <img src="images/823F077E-985E-428B-BE50-00DE7784637F.jpg" alt="Vista Marina">
+            </div>
+        </div>
+
+        <h2 class="section-title">Tesoro Forestal y Fauna</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Un pulmón de vida primaria con maderas preciosas centenarias como Nazareno, Guapinol, Chiricano y Manu Negro, protegiendo un ecosistema de valor inestimable.</p>
+        
+        <div class="grid-3">
+            <div class="card"><img src="images/D55F4434-7FF5-428C-AB98-DE01300CE82C.jpg"><p style="text-align:center">Ranas miniatura exóticas</p></div>
+            <div class="card"><img src="images/9978F1D7-D23D-401F-8678-4E49D640B1E1.jpg"><p style="text-align:center">Especies protegidas</p></div>
+            <div class="card"><img src="images/916D7F53-18D6-4152-87CA-1F5E076DBE22.jpg"><p style="text-align:center">Biodiversidad única</p></div>
+        </div>
+
+        <div class="highlight-box">
+            <h2>Hogar de lo Indómito</h2>
+            <p>Sus tierras son recorridas por manigordos, ocelotes, tolomucos y mamíferos emblemáticos como el mono ardilla y el mono congo. El cielo es propiedad de lapas, trogones y yigüirros, creando un escenario perfecto para el <strong>turismo de avistamiento</strong> y la fotografía de naturaleza de clase mundial.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <img src="images/C39876B7-3FC3-4024-BF16-B6750CBDEF5E.jpeg" style="height: 500px;">
+            </div>
+            <div>
+                <h2 class="section-title">Agua Pura y Aventura</h2>
+                <p>El recurso hídrico es el protagonista: <strong>Cascadas de más de 20 metros de altura</strong> que caen sobre pozas cristalinas de agua pura. Un santuario donde el rapel, el senderismo de aventura y la natación en pozas con peces y camarones de agua dulce ofrecen una experiencia mística y refrescante.</p>
+                <p>Este activo permite desarrollar proyectos de turismo investigativo o wellness de lujo, aprovechando el sonido y la pureza del entorno.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; background: white; padding: 50px; border-radius: 10px;">
+            <h2 class="section-title">Visión de Inversión</h2>
+            <p>Esta propiedad no es solo tierra; es un <strong>HUB Turístico Internacional</strong> en potencia. Su cercanía a la Marina Golfito y su riqueza natural permiten un desarrollo bajo normativas de sostenibilidad que atraerá al mercado europeo y norteamericano interesado en el ecoturismo de lujo y la investigación biológica.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h2>Inicie su próximo gran proyecto</h2>
+        <p>Haga clic abajo para contactar directamente por correo:</p>
+        <a href="mailto:yeisonbaltodano1977@gmail.com" class="btn">yeisonbaltodano1977@gmail.com</a>
+        <p style="margin-top: 50px; opacity: 0.6;">© 2024 Proyecto Finca Golfito JB. Golfito, Puntarenas, Costa Rica.</p>
+    </div>
 
 </body>
 </html>
